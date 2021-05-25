@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css">
+    <title>Document</title>
+</head>
+<body>
+    <div style="background-color: silver; width: 300px; height: 350px; margin: 0 auto;" class="container">
+        <h1>Assigment 02:</h1>
+        <p>Số tiền vay:</p>
+        <input type="text" id="tienvay" value="100000000">
+        <p>thời gian vay (số tháng)</p>
+        <input type="text" id="thoigianvay" value="12">
+        <p>lãi suất (%/năm)</p>
+        <input type="text" id="laiSuat" value="8">
+        <button id="btn" onclick="BMI()">tính</button>
+
+        <div id="result"></div>
+
+<script>
+        
+    function BMI (){
+        var tienvay = document.getElementById("tienvay").value;
+        var thoigianvay = document.getElementById("thoigianvay").value;
+        var laiSuat = document.getElementById("laiSuat").value;
+     var laiSuatPhanTram = laiSuat / 100
+        var soTienGocConLai = tienvay;
+      //for là vòng lập, 
+       for(var i = 0; i < thoigianvay; i++){
+        var SoTienGocPhaiTra = Math.round(tienvay / thoigianvay)
+        var soTienGocConLai =  soTienGocConLai  - SoTienGocPhaiTra
+        var SoTienLaiCanPhaiTra = Math.round(soTienGocConLai * laiSuatPhanTram / 12)
+        var soTienPhaiTraHangThang = Math.round(SoTienLaiCanPhaiTra + SoTienGocPhaiTra)
+        n=i+1
+        var thoigiantra = new Date();
+        thoigiantra.setMonth(thoigiantra.getMonth() +n);
+       
+        //if ở đây để chọn điều kiện 'tháng thứ 1' sẽ thay bằng chữ 'tháng đầu tiên' còn tháng thứ 2 trở đi sẽ ghi bằng thứ tự con số
+        if (n>1) {
+            alert("Trong tháng thứ "+n+"\nSố gốc còn lại là: " + soTienGocConLai + "\nSố gốc phải trả là: " + SoTienGocPhaiTra +"\nTiền lãi phải trả hàng tháng là : " + SoTienLaiCanPhaiTra +"\nSố tiền phải trả trong tháng nay là: " + soTienPhaiTraHangThang + "\nThời hạn trả: "+ thoigiantra.toLocaleString())
+        } else { 
+            alert("Trong tháng đầu tiên"+"\nSố gốc còn lại là: " + soTienGocConLai + "\nSố gốc phải trả là: " + SoTienGocPhaiTra +"\nTiền lãi phải trả hàng tháng là : " + SoTienLaiCanPhaiTra +"\nSố tiền phải trả trong tháng nay là: " + soTienPhaiTraHangThang + "\nThời hạn trả: "+ thoigiantra.toLocaleString())
+        }
+        document.write("Tháng thứ "+ n +"<br>Số gốc còn lại là: " + soTienGocConLai + "<br>Số gốc phải trả là: " + SoTienGocPhaiTra +"<br>Tiền lãi phải trả hàng tháng là : " + SoTienLaiCanPhaiTra +"<br>Số tiền phải trả trong tháng nay là: " + soTienPhaiTraHangThang + "<br>Thời hạn trả: "+ thoigiantra.toLocaleString() + "<br>" + "<br>");
+    }
+    }
+    </script>
+
+    
+</body>
+</html>
