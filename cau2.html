@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Bài 2</title>
+</head>
+
+<script type="text/javascript">
+    function kiemtrasont(n) {
+        let prime = true;
+        if (n == 1) {
+            prime = false;
+        } else {
+            for (let i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    prime = false;
+                }
+            }
+        }
+        return prime;
+    }
+
+    function nhapmang(n) {
+        var so = 0;
+        var sont_array = [];
+        for (let i = 1; i <= n; i++) {
+            so = prompt("Nhập vào số phần tử " + i);
+            if (kiemtrasont(so) == true) {
+                sont_array.push(so);
+            }
+        }
+        document.write(sont_array);
+    }
+
+    var n = prompt("nhap vao so phan tu mang");
+    while (n < 10) {
+        n = prompt("Số phần tử phải >=10, mời nhập lại");
+    }
+    nhapmang(n);
+</script>
+
+<body>
+</body>
+
+</html>

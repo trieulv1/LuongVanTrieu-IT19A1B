@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Bài 2</title>
+</head>
+
+<script type="text/javascript">
+    function kiemtrasohoanhao(n) {
+        let prime = true;
+        let tong = 0;
+        if (n == 1) {
+            document.write(n + " khong phai la so hoan hao");
+            return;
+        } else {
+            for (let i = 1; i < n; i++) {
+                if (n % i == 0) {
+                    tong = tong + i;
+                }
+            }
+        }
+        if (n == tong) {
+            document.write(n + " la so hoan hao");
+        } else {
+            document.write(n + " khong phai la so hoan hao");
+        }
+
+    }
+
+    var n = prompt("Nhập vào 1 số");
+
+    kiemtrasohoanhao(n);
+</script>
+
+<body>
+</body>
+
+</html>

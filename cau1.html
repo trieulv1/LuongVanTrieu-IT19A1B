@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Bài 1</title>
+</head>
+
+<script type="text/javascript">
+    function timsont(sont) {
+        let prime = true;
+        if (n == 1) {
+            prime = false;
+        } else {
+            for (let i = 2; i < n - 1; i++) {
+                if (n % i == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+        }
+        if (prime == true) {
+            document.write(n + ' là số nguyên tố');
+        } else {
+            document.write(n + ' không là số nguyên tố');
+        }
+    }
+
+
+    var n = prompt("nhap vao so nguyen n");
+    timsont(n);
+</script>
+
+<body>
+</body>
+
+</html>

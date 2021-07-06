@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Bài 2</title>
+</head>
+
+<script type="text/javascript">
+    function kiemtrasont(n) {
+        let prime = false;
+        let tong = 0;
+        if (n == 1) {
+            prime = false;
+        } else {
+            for (let i = 1; i < n; i++) {
+                if (n % i == 0) {
+                    tong = tong + i;
+                }
+            }
+        }
+        if (n == tong) {
+            prime = true;
+        }
+        return prime;
+    }
+
+    function nhapmang(n) {
+        var so = 0;
+        var sont_array = [];
+        for (let i = 1; i <= n; i++) {
+            so = prompt("Nhập vào số phần tử thứ " + i);
+            if (kiemtrasont(so) == true) {
+                sont_array.push(so);
+            }
+        }
+        document.write("nhung so hoan hao la " + sont_array);
+    }
+
+    var n = prompt("nhap vao so phan tu mang");
+    while (n < 10) {
+        n = prompt("Số phần tử phải >=10, xin mời nhập lại");
+    }
+    nhapmang(n);
+</script>
+
+<body>
+</body>
+
+</html>

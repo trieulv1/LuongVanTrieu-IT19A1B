@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function ngichdaoso(so) {
+            if (so.length == 1) {
+                return so;
+            } else {
+                return ngichdaoso(so.substr(1)) + so.charAt(0);
+            }
+        }
+
+        function kiemtrasodoisung(n) {
+            let prime = false;
+            let tong = 0,
+                sodau, socuoi, tongchuso = 0;
+            tongchuso = n.toString().length;
+
+            if (n > 10) {
+                if (tongchuso % 2 == 0) {
+                    sodau = ngichdaoso((n.substr(0, tongchuso / 2)).toString());
+                    socuoi = n.substr(tongchuso / 2, tongchuso);
+
+                    if (sodau == socuoi) {
+                        prime = true;
+                    }
+                } else {
+                    tongchuso = tongchuso - 1;
+                    sodau = ngichdaoso((n.substr(0, tongchuso / 2)).toString());
+                    socuoi = n.substr(tongchuso / 2 + 1, tongchuso);
+
+                    if (sodau == socuoi) {
+                        prime = true;
+                    }
+                }
+
+            } else {
+                prime = true;
+            }
+            if (prime) {
+                document.write(n + " la so doi xung");
+            } else {
+                document.write(n + " khong phai la so doi xung");
+            }
+
+        }
+
+        var n = prompt("Nhập vào 1 số");
+
+        kiemtrasodoisung(n);
+    </script>
+</body>
+
+</html>
